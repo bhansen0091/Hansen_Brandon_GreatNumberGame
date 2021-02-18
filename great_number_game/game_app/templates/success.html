@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game</title>
+</head>
+<body>
+    <div id="wrapper">
+        <header class="page_header">
+            <h1>Welcome to the Great Number Game!</h1>
+        </header>
+        <main class="main_content">
+            <div class="text_container">
+                <h3>I am thinking of a number between 1 and 100</h3>
+                <h2>Take a guess!!!</h2>
+            </div>
+            <div class="alert_box">
+                <h1>Success!! {{request.session.guess_box}} was the number!!!</h1>
+            </div>
+            <form action="/start_over" method="POST">
+                {% csrf_token %}
+                <div class="user_guess_box">
+                    <button type="submit" name="submit_btn">Play Again!</button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
